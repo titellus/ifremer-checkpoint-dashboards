@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>HTML page embedding a Kibana dashboard</title>
+        <script type="application/javascript">
+            var kbUrl = null;
+            var filter = function(key, value) {
+                if (kbUrl === null) {
+                    kbUrl = document.getElementById('kbIframe').getAttribute('src');
+                }
+                var newUrl = kbUrl.replace('language:lucene,query:\'\'',
+                    'language:lucene,query:\'%2B' + key + ':%22' + value + '%22\'');
+                document.getElementById('kbIframe').setAttribute('src', newUrl);
+            }
+        </script>
+    </head>
+    <body>
+
+        <h2>Choose a challenge</h2>
+        <select onchange="filter('challenges', this.value)">
+            <option></option>
+            <option value="Atlantic - CH01 - Windfarm Siting">Atlantic - CH01 - Windfarm Siting</option>
+            <option value="Atlantic - CH02 - Marine Protected Areas">Atlantic - CH02 - Marine Protected Areas</option>
+        </select>
+        <br/>
+        <iframe id="kbIframe"
+                src="https://apps.titellus.net/kibana/app/kibana#/dashboard/5e485e90-c7d6-11e8-90bb-6540f76c8ed8?embed=true&_g=(filters:!())&_a=(description:'Annex+5',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(),gridData:(h:11,i:'1',w:48,x:0,y:0),id:'381eb1d0-c7d4-11e8-90bb-6540f76c8ed8',panelIndex:'1',type:visualization,version:'6.4.1'),(embeddableConfig:(),gridData:(h:36,i:'2',w:25,x:0,y:11),id:bf5776c0-c7d2-11e8-90bb-6540f76c8ed8,panelIndex:'2',type:visualization,version:'6.4.1'),(embeddableConfig:(),gridData:(h:31,i:'3',w:48,x:0,y:61),id:'207a6ed0-be3c-11e8-9127-0fc6b934c2f7',panelIndex:'3',type:search,version:'6.4.1'),(embeddableConfig:(),gridData:(h:36,i:'4',w:23,x:25,y:11),id:fffbb400-c7d4-11e8-90bb-6540f76c8ed8,panelIndex:'4',type:visualization,version:'6.4.1'),(embeddableConfig:(),gridData:(h:14,i:'5',w:48,x:0,y:47),id:'25620630-c7d6-11e8-90bb-6540f76c8ed8',panelIndex:'5',type:visualization,version:'6.4.1')),query:(language:lucene,query:''),timeRestore:!f,title:'%5BCheckpoint%5D+Components+statistics',viewMode:view)&embed=true"
+                height="100%"
+                width="100%"
+                style="border:none"></iframe>
+    </body>
+</html>
