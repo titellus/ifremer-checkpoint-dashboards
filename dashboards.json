@@ -240,91 +240,6 @@
     }
   },
   {
-    "_id": "b8f82170-c715-11e8-90bb-6540f76c8ed8",
-    "_type": "visualization",
-    "_source": {
-      "title": "[Checkpoint] P02 Quality measures / Horizontal Spatial Coverage by P01",
-      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Horizontal Spatial Coverage by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Horizontal Spatial Coverage (km**2)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +measureName:\\\"Horizontal Spatial Coverage\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
-    "_id": "0d307e90-c716-11e8-90bb-6540f76c8ed8",
-    "_type": "visualization",
-    "_source": {
-      "title": "[Checkpoint] P02 Quality measures / Vertical Spatial Coverage by P01",
-      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Vertical Spatial Coverage by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Vertical Spatial Coverage (meters)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +measureName:\\\"Vertical Spatial Coverage\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
-    "_id": "e1fd88d0-c715-11e8-90bb-6540f76c8ed8",
-    "_type": "visualization",
-    "_source": {
-      "title": "[Checkpoint] P02 Quality measures / Number of Characteristics by P01",
-      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Number of Characteristics by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Number of Characteristics ()\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +measureName:\\\"Number of Characteristics\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
-    "_id": "fe47d040-c715-11e8-90bb-6540f76c8ed8",
-    "_type": "visualization",
-    "_source": {
-      "title": "[Checkpoint] P02 Quality measures / Temporal resolution by P01",
-      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Temporal resolution by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Temporal resolution (days)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +measureName:\\\"Temporal resolution\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
-    "_id": "1e04a930-c716-11e8-90bb-6540f76c8ed8",
-    "_type": "visualization",
-    "_source": {
-      "title": "[Checkpoint] P02 Quality measures / Temporal validity by P01",
-      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Temporal validity by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Temporal validity (days)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +measureName:\\\"Temporal validity\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
     "_id": "91176740-be3e-11e8-9127-0fc6b934c2f7",
     "_type": "visualization",
     "_source": {
@@ -397,91 +312,6 @@
     }
   },
   {
-    "_id": "70521bb0-c715-11e8-90bb-6540f76c8ed8",
-    "_type": "visualization",
-    "_source": {
-      "title": "[Checkpoint] P02 Quality measures / Temporal Coverage by P01",
-      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Temporal Coverage by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Temporal Coverage (days)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +measureName:\\\"Temporal Coverage\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
-    "_id": "4264f280-c716-11e8-90bb-6540f76c8ed8",
-    "_type": "visualization",
-    "_source": {
-      "title": "[Checkpoint] P02 Quality measures / Vertical resolution by P01",
-      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Vertical resolution by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Vertical resolution (meters)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +measureName:\\\"Vertical resolution\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
-    "_id": "5e8fcb10-c716-11e8-90bb-6540f76c8ed8",
-    "_type": "visualization",
-    "_source": {
-      "title": "[Checkpoint] P02 Quality measures / Number of items by P01",
-      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Number of items by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Number of items ()\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +measureName:\\\"Number of items\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
-    "_id": "3369f4b0-c716-11e8-90bb-6540f76c8ed8",
-    "_type": "visualization",
-    "_source": {
-      "title": "[Checkpoint] P02 Quality measures / Thematic accuracy by P01",
-      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Thematic accuracy by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Thematic accuracy (%)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +measureName:\\\"Thematic accuracy\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
-    "_id": "521de920-c716-11e8-90bb-6540f76c8ed8",
-    "_type": "visualization",
-    "_source": {
-      "title": "[Checkpoint] P02 Quality measures / Usability by P01",
-      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Usability by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Usability ()\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +measureName:\\\"Usability\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
     "_id": "381eb1d0-c7d4-11e8-90bb-6540f76c8ed8",
     "_type": "visualization",
     "_source": {
@@ -492,23 +322,6 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
-    "_id": "f0170040-c715-11e8-90bb-6540f76c8ed8",
-    "_type": "visualization",
-    "_source": {
-      "title": "[Checkpoint] P02 Quality measures / Horizontal resolution by P01",
-      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Horizontal resolution by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Horizontal resolution (m)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +measureName:\\\"Horizontal resolution\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
       }
     },
     "_meta": {
@@ -533,40 +346,6 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"checkpoint\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"+docType:records\",\"language\":\"lucene\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
-    "_id": "207a6ed0-be3c-11e8-9127-0fc6b934c2f7",
-    "_type": "search",
-    "_source": {
-      "title": "[Checkpoint] Components",
-      "description": "",
-      "hits": 0,
-      "columns": [
-        "productName",
-        "Product Score",
-        "cptName",
-        "cptDesc",
-        "noDataAvailable",
-        "noDataExist",
-        "Usabilitiy Score",
-        "p02",
-        "p01",
-        "inputCharacteristics",
-        "DPSLink",
-        "TDPLink"
-      ],
-      "sort": [
-        "_score",
-        "desc"
-      ],
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"checkpoint\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"kuery\",\"query\":\"docType :\\\"component\\\" \"},\"filter\":[]}"
       }
     },
     "_meta": {
@@ -630,18 +409,6 @@
     }
   },
   {
-    "_id": "checkpoint",
-    "_type": "index-pattern",
-    "_source": {
-      "title": "checkpoint*",
-      "fields": "[{\"name\":\"_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"challenges\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"coveredOrNot\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"coveredOrNot.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"cptCovered\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"cptCovered.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"cptDesc\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"cptDesc.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"cptName\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dataDeliveryMechanism\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"docType\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsHorizontalResolution\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsHorizontalSpatialCoverage\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsNumberOfCharacteristics\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsNumberOfCharacteristics.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsNumberOfItems\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsNumberOfItems.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsTemporalCoverage\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsTemporalResolution\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsTemporalValidity\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsTemporalValidity.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsThematicAccuracy\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsThematicAccuracy.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsTitle\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsTitle.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsUsability\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsUsability.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsUuid\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsUuid.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsVerticalResolution\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsVerticalSpatialCoverage\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dqSimpleId\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dqType\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dqType.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dqUuid\",\"type\":\"string\",\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"east\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"environmentalMatrix\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"expertScore\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"identifier\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"inputCharacteristics\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"inputCharacteristics.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"inspireTheme\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lineage\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lineage.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"linkToSextant\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"linkToSextant.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"matrix\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"matrix.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"measureId\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"measureName\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"measureStatement\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"measureStatement.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"measureValue\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"metadataUuid\",\"type\":\"string\",\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"metadataUuid.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"nbOfLineage\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"nbOfLineage.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"noDataAvailable\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"noDataExist\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"north\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"notCoveredExplanation\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"notCoveredExplanation.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"notCoveredStatement\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"notCoveredStatement.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"p01\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"p01other\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"p02\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"p03\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"policyVisibility\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"processingLevelOfChar\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"productExpertOpinion\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"productName\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"productScore\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"readyness\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"reportType\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"reportType.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"resourceType\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"resourceType.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"serviceExtent\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"south\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"spatialRepresentationType\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"standardName\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpHorizontalResolution\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpHorizontalSpatialCoverage\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpNumberOfCharacteristics\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpNumberOfCharacteristics.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpNumberOfItems\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpNumberOfItems.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpScore\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpScore.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpTemporalCoverage\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpTemporalResolution\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpTemporalValidity\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpTemporalValidity.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpThematicAccuracy\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpThematicAccuracy.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpTitle\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpTitle.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpUsability\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpUsability.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpUuid\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpUuid.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpVerticalResolution\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpVerticalSpatialCoverage\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"timeBeginPosition\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"timeEndPosition\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"title\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"uniqueid\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"uniqueid.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"usabilityScore\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"uuid\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"validation\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"visibility\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"west\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Product Score\",\"type\":\"number\",\"count\":1,\"scripted\":true,\"script\":\"doc['productScore'].value\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"Usabilitiy Score\",\"type\":\"number\",\"count\":1,\"scripted\":true,\"script\":\"doc['usabilityScore'].value\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"TDPLink\",\"type\":\"string\",\"count\":1,\"scripted\":true,\"script\":\"doc['tdpUuid.keyword'].value\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"DPSLink\",\"type\":\"string\",\"count\":1,\"scripted\":true,\"script\":\"doc['dpsUuid.keyword'].value\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"RecordLink\",\"type\":\"string\",\"count\":1,\"scripted\":true,\"script\":\"doc['metadataUuid.keyword'].value\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false}]",
-      "fieldFormatMap": "{\"Product Score\":{\"id\":\"color\",\"params\":{\"fieldType\":\"number\",\"colors\":[{\"range\":\"1:1\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ff0000\"},{\"range\":\"2:2\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ffc000\"},{\"range\":\"3:3\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ffff00\"},{\"range\":\"4:4\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ccff66\"},{\"range\":\"5:5\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#00cc00\"}]}},\"Usabilitiy Score\":{\"id\":\"color\",\"params\":{\"fieldType\":\"number\",\"colors\":[{\"range\":\"1:1\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ff0000\"},{\"range\":\"2:2\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ffc000\"},{\"range\":\"3:3\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ffff00\"},{\"range\":\"4:4\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ccff66\"},{\"range\":\"5:5\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#00cc00\"}]}},\"TDPLink\":{\"id\":\"url\",\"params\":{\"urlTemplate\":\"http://www.emodnet-atlantic.eu/Checkpoint-service/Browser#/metadata/{{rawValue}}\",\"labelTemplate\":\"TDP Details\"}},\"DPSLink\":{\"id\":\"url\",\"params\":{\"urlTemplate\":\"http://www.emodnet-atlantic.eu/Checkpoint-service/Browser#/metadata/{{rawValue}}\",\"labelTemplate\":\"DPS details\"}},\"RecordLink\":{\"id\":\"url\",\"params\":{\"urlTemplate\":\"http://www.emodnet-atlantic.eu/Checkpoint-service/Browser#/metadata/{{rawValue}}\",\"labelTemplate\":\"Record link\"}}}"
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
     "_id": "dbe5efb0-c86d-11e8-a785-0bef37355818",
     "_type": "dashboard",
     "_source": {
@@ -654,6 +421,127 @@
       "timeRestore": false,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"controlledBy\":\"1537610571463\",\"disabled\":false,\"index\":\"checkpoint\",\"key\":\"resourceType.keyword\",\"negate\":false,\"params\":[\"DPS\",\"TDP\",\"UD\"],\"type\":\"phrases\",\"value\":\"DPS, TDP, UD\"},\"query\":{\"bool\":{\"minimum_should_match\":1,\"should\":[{\"match_phrase\":{\"resourceType.keyword\":\"DPS\"}},{\"match_phrase\":{\"resourceType.keyword\":\"TDP\"}},{\"match_phrase\":{\"resourceType.keyword\":\"UD\"}}]}}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "06df2270-d05e-11e8-bb16-61fe7921a6ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Checkpoint] Records by matrix",
+      "visState": "{\"title\":\"[Checkpoint] Records by matrix\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"environmentalMatrix\",\"size\":25,\"order\":\"asc\",\"orderBy\":\"_key\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Matrix\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "fb736990-c7d0-11e8-90bb-6540f76c8ed8",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "af8f68a0-d05c-11e8-bb16-61fe7921a6ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Checkpoint] Color legend",
+      "visState": "{\"title\":\"[Checkpoint] Color legend\",\"type\":\"markdown\",\"params\":{\"fontSize\":10,\"openLinksInNewTab\":false,\"markdown\":\"![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Inadequate: Impossible to produce or fails to meet all the objectives (not usable)\\n\\n![#ff9900](https://placehold.it/15/ff9900/000000?text=+) Limited: The product fails in most aspects to meet the objectives but meet some.\\n\\n![#ffff99](https://placehold.it/15/ffff99/000000?text=+) Good: The product meets more than 50% of the objectives specified by the challenge\\n\\n![#99ff99](https://placehold.it/15/99ff99/000000?text=+) Very good: The product meets more than 70% of the objectives specified by the challenge\\n\\n![#33cc33](https://placehold.it/15/33cc33/000000?text=+) Excellent: The product meets well the objectives specified by the challenge\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "checkpoint",
+    "_type": "index-pattern",
+    "_source": {
+      "title": "checkpoint*",
+      "fields": "[{\"name\":\"_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"challenges\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"coveredOrNot\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"coveredOrNot.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"cptCovered\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"cptCovered.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"cptDesc\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"cptDesc.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"cptName\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dataDeliveryMechanism\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"docType\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsHorizontalResolution\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsHorizontalSpatialCoverage\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsNumberOfCharacteristics\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsNumberOfCharacteristics.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsNumberOfItems\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsNumberOfItems.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsTemporalCoverage\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsTemporalResolution\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsTemporalValidity\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsTemporalValidity.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsThematicAccuracy\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsThematicAccuracy.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsTitle\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsTitle.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsUsability\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsUsability.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsUuid\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dpsUuid.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsVerticalResolution\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dpsVerticalSpatialCoverage\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dqSimpleId\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dqType\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"dqType.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"dqUuid\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"east\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"environmentalMatrix\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"expertScore\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"identifier\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"inputCharacteristics\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"inputCharacteristics.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"inspireTheme\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lineage\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lineage.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"linkToSextant\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"linkToSextant.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"matrix\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"matrix.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"measureId\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"measureName\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"measureStatement\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"measureStatement.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"measureValue\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"metadataUuid\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"metadataUuid.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"nbOfLineage\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"nbOfLineage.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"noData\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"noDataAvailable\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"noDataExist\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"north\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"notCoveredExplanation\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"notCoveredExplanation.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"notCoveredStatement\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"notCoveredStatement.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"p01\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"p01other\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"p02\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"p03\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"policyVisibility\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"processingLevelOfChar\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"productExpertOpinion\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"productName\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"productScore\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"readyness\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"reportType\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"reportType.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"resourceType\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"resourceType.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"serviceExtent\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"south\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"spatialRepresentationType\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"standardName\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpHorizontalResolution\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpHorizontalSpatialCoverage\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpNumberOfCharacteristics\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpNumberOfCharacteristics.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpNumberOfItems\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpNumberOfItems.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpScore\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpScore.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpTemporalCoverage\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpTemporalResolution\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpTemporalValidity\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpTemporalValidity.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpThematicAccuracy\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpThematicAccuracy.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpTitle\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpTitle.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpUsability\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpUsability.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpUuid\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tdpUuid.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpVerticalResolution\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"tdpVerticalSpatialCoverage\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"timeBeginPosition\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"timeEndPosition\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"title\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"uniqueid\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"uniqueid.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"usabilityScore\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"uuid\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"validation\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"visibility\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"west\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Product Score\",\"type\":\"number\",\"count\":1,\"scripted\":true,\"script\":\"doc['productScore'].value\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"Usabilitiy Score\",\"type\":\"number\",\"count\":1,\"scripted\":true,\"script\":\"doc['usabilityScore'].value\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"RecordLink\",\"type\":\"string\",\"count\":1,\"scripted\":true,\"script\":\"doc['metadataUuid.keyword'].value\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"Specification (DPS) link\",\"type\":\"string\",\"count\":1,\"scripted\":true,\"script\":\"doc['tdpUuid.keyword'].value\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"Realisation (TDP) link\",\"type\":\"string\",\"count\":1,\"scripted\":true,\"script\":\"doc['tdpUuid.keyword'].value\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false}]",
+      "fieldFormatMap": "{\"Product Score\":{\"id\":\"color\",\"params\":{\"fieldType\":\"number\",\"colors\":[{\"range\":\"1:1\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ff0000\"},{\"range\":\"2:2\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ffc000\"},{\"range\":\"3:3\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ffff00\"},{\"range\":\"4:4\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ccff66\"},{\"range\":\"5:5\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#00cc00\"}]}},\"Usabilitiy Score\":{\"id\":\"color\",\"params\":{\"fieldType\":\"number\",\"colors\":[{\"range\":\"1:1\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ff0000\"},{\"range\":\"2:2\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ffc000\"},{\"range\":\"3:3\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ffff00\"},{\"range\":\"4:4\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#ccff66\"},{\"range\":\"5:5\",\"regex\":\"<insert regex>\",\"text\":\"#000000\",\"background\":\"#00cc00\"}]}},\"RecordLink\":{\"id\":\"url\",\"params\":{\"urlTemplate\":\"http://www.emodnet-atlantic.eu/Checkpoint-service/Browser#/metadata/{{rawValue}}\",\"labelTemplate\":\"Record link\"}},\"Specification (DPS) link\":{\"id\":\"url\",\"params\":{\"urlTemplate\":\"http://www.emodnet-atlantic.eu/Checkpoint-service/Browser#/metadata/{{rawValue}}\"}},\"Realisation (TDP) link\":{\"id\":\"url\",\"params\":{\"urlTemplate\":\"http://www.emodnet-atlantic.eu/Checkpoint-service/Browser#/metadata/{{rawValue}}\"}}}"
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "e078a110-c716-11e8-90bb-6540f76c8ed8",
+    "_type": "dashboard",
+    "_source": {
+      "title": "[Checkpoint] P02 Quality measures",
+      "hits": 0,
+      "description": "Annex 3",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":10,\"i\":\"1\"},\"id\":\"322d1190-be47-11e8-9127-0fc6b934c2f7\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Choose challenge, p02 and measures\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":58,\"w\":16,\"h\":48,\"i\":\"3\"},\"id\":\"70521bb0-c715-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Temporal Coverage by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":10,\"w\":16,\"h\":48,\"i\":\"4\"},\"id\":\"f0170040-c715-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Horizontal resolution by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":106,\"w\":16,\"h\":48,\"i\":\"5\"},\"id\":\"e1fd88d0-c715-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Number of Characteristics by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":16,\"y\":10,\"w\":16,\"h\":48,\"i\":\"6\"},\"id\":\"b8f82170-c715-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Horizontal Spatial Coverage by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":32,\"y\":58,\"w\":16,\"h\":48,\"i\":\"7\"},\"id\":\"fe47d040-c715-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Temporal resolution by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":16,\"y\":58,\"w\":16,\"h\":48,\"i\":\"8\"},\"id\":\"1e04a930-c716-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Temporal validity by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":154,\"w\":16,\"h\":45,\"i\":\"9\"},\"id\":\"3369f4b0-c716-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Thematic accuracy by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":32,\"y\":10,\"w\":16,\"h\":48,\"i\":\"10\"},\"id\":\"4264f280-c716-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Vertical resolution by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":16,\"y\":154,\"w\":16,\"h\":45,\"i\":\"11\"},\"id\":\"521de920-c716-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"11\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Usability by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":16,\"y\":106,\"w\":16,\"h\":48,\"i\":\"12\"},\"id\":\"5e8fcb10-c716-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"12\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Number of items by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":32,\"y\":106,\"w\":16,\"h\":48,\"i\":\"13\"},\"id\":\"0d307e90-c716-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"13\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Vertical Spatial Coverage by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":199,\"w\":48,\"h\":46,\"i\":\"14\"},\"id\":\"a0d657b0-be46-11e8-9127-0fc6b934c2f7\",\"panelIndex\":\"14\",\"type\":\"search\",\"version\":\"6.4.1\",\"title\":\"Measures\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"checkpoint\",\"controlledBy\":\"1539597096882\",\"type\":\"phrase\",\"key\":\"challenges\",\"value\":\"Atlantic - CH05 - Coasts\",\"params\":{\"query\":\"Atlantic - CH05 - Coasts\",\"type\":\"phrase\"},\"disabled\":false,\"negate\":false,\"alias\":null},\"query\":{\"match\":{\"challenges\":{\"query\":\"Atlantic - CH05 - Coasts\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"globalState\"}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"controlledBy\":\"1537610571463\",\"disabled\":false,\"index\":\"checkpoint\",\"key\":\"resourceType.keyword\",\"negate\":false,\"params\":[\"DPS\",\"TDP\"],\"type\":\"phrases\",\"value\":\"DPS, TDP\"},\"query\":{\"bool\":{\"minimum_should_match\":1,\"should\":[{\"match_phrase\":{\"resourceType.keyword\":\"DPS\"}},{\"match_phrase\":{\"resourceType.keyword\":\"TDP\"}}]}}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "503a8670-be3f-11e8-9127-0fc6b934c2f7",
+    "_type": "dashboard",
+    "_source": {
+      "title": "[Checkpoint] List of components",
+      "hits": 0,
+      "description": "List all components by challenges with associated products and their scores",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":29,\"w\":48,\"h\":35,\"i\":\"2\"},\"id\":\"207a6ed0-be3c-11e8-9127-0fc6b934c2f7\",\"panelIndex\":\"2\",\"title\":\"List of components\",\"type\":\"search\",\"version\":\"6.4.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":14,\"w\":18,\"h\":15,\"i\":\"3\"},\"id\":\"91176740-be3e-11e8-9127-0fc6b934c2f7\",\"panelIndex\":\"3\",\"title\":\"Number of components\",\"type\":\"visualization\",\"version\":\"6.4.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":14,\"i\":\"4\"},\"id\":\"2d8eae70-be40-11e8-9127-0fc6b934c2f7\",\"panelIndex\":\"4\",\"title\":\"\",\"type\":\"visualization\",\"version\":\"6.4.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":64,\"w\":48,\"h\":28,\"i\":\"5\"},\"id\":\"09136da0-be41-11e8-9127-0fc6b934c2f7\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Product score by challenges\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":33,\"y\":14,\"w\":15,\"h\":15,\"i\":\"6\"},\"id\":\"af8f68a0-d05c-11e8-bb16-61fe7921a6ea\",\"panelIndex\":\"6\",\"title\":\"\",\"type\":\"visualization\",\"version\":\"6.4.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":18,\"y\":14,\"w\":15,\"h\":15,\"i\":\"7\"},\"id\":\"7917db70-d05e-11e8-bb16-61fe7921a6ea\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Components by matrix\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"checkpoint\",\"controlledBy\":\"1537603400659\",\"type\":\"phrase\",\"key\":\"challenges\",\"value\":\"Atlantic - CH01 - Windfarm Siting\",\"params\":{\"query\":\"Atlantic - CH01 - Windfarm Siting\",\"type\":\"phrase\"},\"disabled\":false,\"negate\":false,\"alias\":null},\"query\":{\"match\":{\"challenges\":{\"query\":\"Atlantic - CH01 - Windfarm Siting\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "e01dd340-d150-11e8-9e98-e75275c4844e",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Checkpoint] Components by product",
+      "visState": "{\"title\":\"[Checkpoint] Components by product\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"productName\",\"size\":55,\"order\":\"asc\",\"orderBy\":\"_key\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"row\":true}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"cptName\",\"size\":55,\"order\":\"asc\",\"orderBy\":\"_key\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"cptDesc.keyword\",\"size\":10,\"order\":\"asc\",\"orderBy\":\"_key\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":true,\"missingBucketLabel\":\"Missing\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"noData\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":true,\"missingBucketLabel\":\"Missing\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"usabilityScore\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}},{\"id\":\"8\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"p02\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}},{\"id\":\"9\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"p01\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}},{\"id\":\"10\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Realisation (TDP) link\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}},{\"id\":\"11\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Specification (DPS) link\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "207a6ed0-be3c-11e8-9127-0fc6b934c2f7",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "7917db70-d05e-11e8-bb16-61fe7921a6ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Checkpoint] Components by matrix",
+      "visState": "{\"title\":\"[Checkpoint] Components by matrix\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"matrix.keyword\",\"size\":35,\"order\":\"asc\",\"orderBy\":\"_key\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":false}}",
+      "description": "",
+      "savedSearchId": "207a6ed0-be3c-11e8-9127-0fc6b934c2f7",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
       }
     },
     "_meta": {
@@ -683,7 +571,7 @@
       ],
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"checkpoint\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"checkpoint\",\"controlledBy\":\"1538722282502\",\"type\":\"phrase\",\"key\":\"challenges\",\"value\":\"Atlantic - CH02 - Marine Protected Areas\",\"params\":{\"query\":\"Atlantic - CH02 - Marine Protected Areas\",\"type\":\"phrase\"},\"disabled\":false,\"negate\":false,\"alias\":null},\"query\":{\"match\":{\"challenges\":{\"query\":\"Atlantic - CH02 - Marine Protected Areas\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"globalState\"}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"checkpoint\",\"key\":\"docType\",\"negate\":false,\"params\":{\"query\":\"dqmeasures\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"dqmeasures\"},\"query\":{\"match\":{\"docType\":{\"query\":\"dqmeasures\",\"type\":\"phrase\"}}}}]}"
+        "searchSourceJSON": "{\"index\":\"checkpoint\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"checkpoint\",\"key\":\"docType\",\"negate\":false,\"params\":{\"query\":\"dqmeasures\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"dqmeasures\"},\"query\":{\"match\":{\"docType\":{\"query\":\"dqmeasures\",\"type\":\"phrase\"}}}}]}"
       }
     },
     "_meta": {
@@ -691,17 +579,31 @@
     }
   },
   {
-    "_id": "06df2270-d05e-11e8-bb16-61fe7921a6ea",
-    "_type": "visualization",
+    "_id": "207a6ed0-be3c-11e8-9127-0fc6b934c2f7",
+    "_type": "search",
     "_source": {
-      "title": "[Checkpoint] Records by matrix",
-      "visState": "{\"title\":\"[Checkpoint] Records by matrix\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"environmentalMatrix\",\"size\":25,\"order\":\"asc\",\"orderBy\":\"_key\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Matrix\"}}]}",
-      "uiStateJSON": "{}",
+      "title": "[Checkpoint] Components",
       "description": "",
-      "savedSearchId": "fb736990-c7d0-11e8-90bb-6540f76c8ed8",
+      "hits": 0,
+      "columns": [
+        "productName",
+        "Product Score",
+        "cptName",
+        "cptDesc",
+        "noData",
+        "Usabilitiy Score",
+        "p02",
+        "p01",
+        "Realisation (TDP) link",
+        "Specification (DPS) link"
+      ],
+      "sort": [
+        "_score",
+        "desc"
+      ],
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"checkpoint\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"kuery\",\"query\":\"docType :\\\"component\\\" \"},\"filter\":[]}"
       }
     },
     "_meta": {
@@ -709,11 +611,11 @@
     }
   },
   {
-    "_id": "2d8eae70-be40-11e8-9127-0fc6b934c2f7",
+    "_id": "b8f82170-c715-11e8-90bb-6540f76c8ed8",
     "_type": "visualization",
     "_source": {
-      "title": "[Checkpoint] Choose a challenge and products",
-      "visState": "{\"title\":\"[Checkpoint] Choose a challenge and products\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1537603400659\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"challenges\",\"parent\":\"\",\"label\":\"Choose a challenge\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":false,\"size\":100,\"order\":\"desc\"}},{\"id\":\"1539595861127\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"matrix.keyword\",\"parent\":\"\",\"label\":\"Choose a matrix\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}},{\"id\":\"1537604248468\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"productName\",\"parent\":\"1537603400659\",\"label\":\"Choose products\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}},{\"id\":\"1537604276807\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"noDataAvailable\",\"parent\":\"\",\"label\":\"No data available?\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":false,\"dynamicOptions\":false,\"size\":2,\"order\":\"desc\"}},{\"id\":\"1537604285594\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"noDataExist\",\"parent\":\"\",\"label\":\"No data exist?\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":false,\"dynamicOptions\":false,\"size\":2,\"order\":\"desc\"}}],\"updateFiltersOnChange\":true,\"useTimeFilter\":false,\"pinFilters\":true},\"aggs\":[]}",
+      "title": "[Checkpoint] P02 Quality measures / Horizontal Spatial Coverage by P01",
+      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Horizontal Spatial Coverage by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Horizontal Spatial Coverage (km**2)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +resourceType:(DPS or TDP) +measureName:\\\"Horizontal Spatial Coverage\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
@@ -726,16 +628,169 @@
     }
   },
   {
-    "_id": "af8f68a0-d05c-11e8-bb16-61fe7921a6ea",
+    "_id": "0d307e90-c716-11e8-90bb-6540f76c8ed8",
     "_type": "visualization",
     "_source": {
-      "title": "[Checkpoint] Color legend",
-      "visState": "{\"title\":\"[Checkpoint] Color legend\",\"type\":\"markdown\",\"params\":{\"fontSize\":10,\"openLinksInNewTab\":false,\"markdown\":\"![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Inadequate: Impossible to produce or fails to meet all the objectives (not usable)\\n\\n![#ff9900](https://placehold.it/15/ff9900/000000?text=+) Limited: The product fails in most aspects to meet the objectives but meet some.\\n\\n![#ffff99](https://placehold.it/15/ffff99/000000?text=+) Good: The product meets more than 50% of the objectives specified by the challenge\\n\\n![#99ff99](https://placehold.it/15/99ff99/000000?text=+) Very good: The product meets more than 70% of the objectives specified by the challenge\\n\\n![#33cc33](https://placehold.it/15/33cc33/000000?text=+) Excellent: The product meets well the objectives specified by the challenge\"},\"aggs\":[]}",
+      "title": "[Checkpoint] P02 Quality measures / Vertical Spatial Coverage by P01",
+      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Vertical Spatial Coverage by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Vertical Spatial Coverage (meters)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +resourceType:(DPS or TDP) +measureName:\\\"Vertical Spatial Coverage\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "e1fd88d0-c715-11e8-90bb-6540f76c8ed8",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Checkpoint] P02 Quality measures / Number of Characteristics by P01",
+      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Number of Characteristics by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Number of Characteristics ()\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +resourceType:(DPS or TDP) +measureName:\\\"Number of Characteristics\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "f0170040-c715-11e8-90bb-6540f76c8ed8",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Checkpoint] P02 Quality measures / Horizontal resolution by P01",
+      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Horizontal resolution by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Horizontal resolution (m)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +resourceType:(DPS or TDP) +measureName:\\\"Horizontal resolution\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "fe47d040-c715-11e8-90bb-6540f76c8ed8",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Checkpoint] P02 Quality measures / Temporal resolution by P01",
+      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Temporal resolution by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Temporal resolution (days)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +resourceType:(DPS or TDP) +measureName:\\\"Temporal resolution\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "1e04a930-c716-11e8-90bb-6540f76c8ed8",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Checkpoint] P02 Quality measures / Temporal validity by P01",
+      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Temporal validity by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Temporal validity (days)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +resourceType:(DPS or TDP) +measureName:\\\"Temporal validity\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "70521bb0-c715-11e8-90bb-6540f76c8ed8",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Checkpoint] P02 Quality measures / Temporal Coverage by P01",
+      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Temporal Coverage by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Temporal Coverage (days)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +resourceType:(DPS or TDP) +measureName:\\\"Temporal Coverage\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "5e8fcb10-c716-11e8-90bb-6540f76c8ed8",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Checkpoint] P02 Quality measures / Number of items by P01",
+      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Number of items by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Number of items ()\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +resourceType:(DPS or TDP) +measureName:\\\"Number of items\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "3369f4b0-c716-11e8-90bb-6540f76c8ed8",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Checkpoint] P02 Quality measures / Thematic accuracy by P01",
+      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Thematic accuracy by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Thematic accuracy (%)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +resourceType:(DPS or TDP) +measureName:\\\"Thematic accuracy\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "521de920-c716-11e8-90bb-6540f76c8ed8",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Checkpoint] P02 Quality measures / Usability by P01",
+      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Usability by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Usability ()\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +resourceType:(DPS or TDP) +measureName:\\\"Usability\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "4264f280-c716-11e8-90bb-6540f76c8ed8",
+    "_type": "visualization",
+    "_source": {
+      "title": "[Checkpoint] P02 Quality measures / Vertical resolution by P01",
+      "visState": "{\"title\":\"[Checkpoint] P02 Quality measures / Vertical resolution by P01\",\"type\":\"vega\",\"params\":{\"spec\":\"{ \\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: Vertical resolution (meters)\\n  data: {\\n    url: {\\n      index: checkpoint \\n      body: {\\n        _source: [\\\"dqSimpleId\\\", \\\"measureName\\\", \\\"measureValue\\\", \\\"p01\\\", \\\"cptName\\\", \\\"resourceType\\\", \\\"identifier\\\"],\\n        query: {bool: {must: [         \\n            \\\"%dashboard_context-must_clause%\\\",\\n            {query_string: {\\n                query: '+docType:dqmeasures +resourceType:(DPS or TDP) +measureName:\\\"Vertical resolution\\\"'}}]}},\\n        sort : [\\n          {dqSimpleId : {order: \\\"asc\\\"}},\\n          {measureName : {order: \\\"asc\\\"}}\\n        ],\\n        size: 100\\n      }\\n    }\\n    format: {property: \\\"hits.hits\\\"}\\n  } \\n  transform: [\\n    {calculate: \\\"datum._source.measureName\\\", as: \\\"measureName\\\"}\\n    {calculate: \\\"parseFloat(datum._source.measureValue)\\\", as: \\\"measureValue\\\"}\\n    {calculate: \\\"datum._source.p01\\\", as: \\\"p01\\\"}\\n    {calculate: \\\"datum._source.p01 + '/' + datum._source.dqSimpleId\\\", as: \\\"x\\\"}\\n    {calculate: \\\"datum._source.cptName\\\", as: \\\"cptName\\\"}\\n    {calculate: \\\"datum._source.resourceType\\\", as: \\\"resourceType\\\"}\\n  ],\\n  mark: bar\\n  encoding: {\\n    x: {\\n      field: \\\"_source.dqSimpleId\\\"\\n      type: ordinal\\n      axis: {\\n        title: false\\n        labelBaseline: top\\n        labelAngle: 90\\n      }\\n    }\\n    y: {\\n      field: \\\"measureValue\\\"\\n      type: quantitative\\n      axis: {\\n        title: false\\n      }\\n    }\\n    color: {\\n      field: \\\"resourceType\\\"\\n      type: nominal\\n    },\\n    row: {\\n      field: \\\"p01\\\", \\n      type: \\\"nominal\\\"\\n    }\\n  }\\n}\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
       }
     },
     "_meta": {
@@ -747,7 +802,7 @@
     "_type": "visualization",
     "_source": {
       "title": "[Checkpoint] Choose challenges and measures",
-      "visState": "{\"title\":\"[Checkpoint] Choose challenges and measures\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1538722282502\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"challenges\",\"parent\":\"\",\"label\":\"Choose a challenge\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}},{\"id\":\"1537610571463\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"resourceType.keyword\",\"parent\":\"\",\"label\":\"Choose resource types\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}},{\"id\":\"1538723529118\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"measureName\",\"parent\":\"1538722282502\",\"label\":\"Choose measures\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}},{\"id\":\"1538733422634\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"dqSimpleId\",\"parent\":\"1538722282502\",\"label\":\"Choose resource\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}}],\"updateFiltersOnChange\":true,\"useTimeFilter\":false,\"pinFilters\":true},\"aggs\":[]}",
+      "visState": "{\"title\":\"[Checkpoint] Choose challenges and measures\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1538722282502\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"challenges\",\"parent\":\"\",\"label\":\"Choose a challenge\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}},{\"id\":\"1537610571463\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"resourceType.keyword\",\"parent\":\"\",\"label\":\"Choose resource types\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}},{\"id\":\"1538723529118\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"measureName\",\"parent\":\"1538722282502\",\"label\":\"Choose measures\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}}],\"updateFiltersOnChange\":true,\"useTimeFilter\":false,\"pinFilters\":true},\"aggs\":[]}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
@@ -760,36 +815,16 @@
     }
   },
   {
-    "_id": "7917db70-d05e-11e8-bb16-61fe7921a6ea",
+    "_id": "2d8eae70-be40-11e8-9127-0fc6b934c2f7",
     "_type": "visualization",
     "_source": {
-      "title": "[Checkpoint] Components by matrix",
-      "visState": "{\"title\":\"[Checkpoint] Components by matrix\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"matrix.keyword\",\"size\":35,\"order\":\"asc\",\"orderBy\":\"_key\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
-      "uiStateJSON": "{\"vis\":{\"legendOpen\":false}}",
+      "title": "[Checkpoint] Choose a challenge and products",
+      "visState": "{\"title\":\"[Checkpoint] Choose a challenge and products\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1537603400659\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"challenges\",\"parent\":\"\",\"label\":\"Choose a challenge\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":false,\"size\":100,\"order\":\"desc\"}},{\"id\":\"1537604248468\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"productName\",\"parent\":\"1537603400659\",\"label\":\"Choose products\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}},{\"id\":\"1537604276807\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"noData\",\"parent\":\"\",\"label\":\"No data available nor exists?\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":false,\"dynamicOptions\":false,\"size\":2,\"order\":\"desc\"}}],\"updateFiltersOnChange\":true,\"useTimeFilter\":false,\"pinFilters\":true},\"aggs\":[]}",
+      "uiStateJSON": "{}",
       "description": "",
-      "savedSearchId": "207a6ed0-be3c-11e8-9127-0fc6b934c2f7",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
-    "_id": "503a8670-be3f-11e8-9127-0fc6b934c2f7",
-    "_type": "dashboard",
-    "_source": {
-      "title": "[Checkpoint] List of components",
-      "hits": 0,
-      "description": "List all components by challenges with associated products and their scores",
-      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":29,\"w\":48,\"h\":35,\"i\":\"2\"},\"id\":\"207a6ed0-be3c-11e8-9127-0fc6b934c2f7\",\"panelIndex\":\"2\",\"title\":\"List of components\",\"type\":\"search\",\"version\":\"6.4.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":14,\"w\":18,\"h\":15,\"i\":\"3\"},\"id\":\"91176740-be3e-11e8-9127-0fc6b934c2f7\",\"panelIndex\":\"3\",\"title\":\"Number of components\",\"type\":\"visualization\",\"version\":\"6.4.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":34,\"h\":14,\"i\":\"4\"},\"id\":\"2d8eae70-be40-11e8-9127-0fc6b934c2f7\",\"panelIndex\":\"4\",\"title\":\"\",\"type\":\"visualization\",\"version\":\"6.4.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":64,\"w\":48,\"h\":28,\"i\":\"5\"},\"id\":\"09136da0-be41-11e8-9127-0fc6b934c2f7\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Product score by challenges\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":34,\"y\":0,\"w\":14,\"h\":14,\"i\":\"6\"},\"id\":\"af8f68a0-d05c-11e8-bb16-61fe7921a6ea\",\"panelIndex\":\"6\",\"title\":\"\",\"type\":\"visualization\",\"version\":\"6.4.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":18,\"y\":14,\"w\":30,\"h\":15,\"i\":\"7\"},\"id\":\"7917db70-d05e-11e8-bb16-61fe7921a6ea\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Components by matrix\"}]",
-      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
-      "version": 1,
-      "timeRestore": false,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"checkpoint\",\"controlledBy\":\"1537603400659\",\"type\":\"phrase\",\"key\":\"challenges\",\"value\":\"Atlantic - CH01 - Windfarm Siting\",\"params\":{\"query\":\"Atlantic - CH01 - Windfarm Siting\",\"type\":\"phrase\"},\"disabled\":false,\"negate\":false,\"alias\":null},\"query\":{\"match\":{\"challenges\":{\"query\":\"Atlantic - CH01 - Windfarm Siting\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
       }
     },
     "_meta": {
@@ -801,31 +836,12 @@
     "_type": "visualization",
     "_source": {
       "title": "[Checkpoint] Choose p02 and measures",
-      "visState": "{\"title\":\"[Checkpoint] Choose p02 and measures\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1539597096882\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"challenges\",\"parent\":\"\",\"label\":\"Choose a challenge\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}},{\"id\":\"1537607243398\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"p02\",\"parent\":\"1539597096882\",\"label\":\"Choose a P02\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":false,\"dynamicOptions\":false,\"size\":50,\"order\":\"desc\"}},{\"id\":\"1538576814243\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"p01\",\"parent\":\"1537607243398\",\"label\":\"Choose P01\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":false,\"size\":50,\"order\":\"desc\"}},{\"id\":\"1537607262543\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"measureName\",\"parent\":\"1537607243398\",\"label\":\"Choose measures\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}},{\"id\":\"1537610571463\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"resourceType.keyword\",\"parent\":\"\",\"label\":\"Choose resource types\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}}],\"updateFiltersOnChange\":true,\"useTimeFilter\":false,\"pinFilters\":true},\"aggs\":[]}",
+      "visState": "{\"title\":\"[Checkpoint] Choose p02 and measures\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1539597096882\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"challenges\",\"parent\":\"\",\"label\":\"Choose a challenge\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}},{\"id\":\"1538576814243\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"p01\",\"parent\":\"1539597096882\",\"label\":\"Choose P01\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":false,\"size\":50,\"order\":\"desc\"}},{\"id\":\"1537607243398\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"p02\",\"parent\":\"1539597096882\",\"label\":\"Choose a P02\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":false,\"dynamicOptions\":false,\"size\":50,\"order\":\"desc\"}},{\"id\":\"1537607262543\",\"indexPattern\":\"checkpoint\",\"fieldName\":\"measureName\",\"parent\":\"1537607243398\",\"label\":\"Choose measures\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}}],\"updateFiltersOnChange\":true,\"useTimeFilter\":false,\"pinFilters\":true},\"aggs\":[]}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    }
-  },
-  {
-    "_id": "e078a110-c716-11e8-90bb-6540f76c8ed8",
-    "_type": "dashboard",
-    "_source": {
-      "title": "[Checkpoint] P02 Quality measures",
-      "hits": 0,
-      "description": "Annex 3",
-      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":10,\"i\":\"1\"},\"id\":\"322d1190-be47-11e8-9127-0fc6b934c2f7\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Choose challenge, p02 and measures\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":58,\"w\":16,\"h\":48,\"i\":\"3\"},\"id\":\"70521bb0-c715-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Temporal Coverage by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":10,\"w\":16,\"h\":48,\"i\":\"4\"},\"id\":\"f0170040-c715-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Horizontal resolution by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":106,\"w\":16,\"h\":48,\"i\":\"5\"},\"id\":\"e1fd88d0-c715-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Number of Characteristics by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":16,\"y\":10,\"w\":16,\"h\":48,\"i\":\"6\"},\"id\":\"b8f82170-c715-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Horizontal Spatial Coverage by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":32,\"y\":58,\"w\":16,\"h\":48,\"i\":\"7\"},\"id\":\"fe47d040-c715-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Temporal resolution by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":16,\"y\":58,\"w\":16,\"h\":48,\"i\":\"8\"},\"id\":\"1e04a930-c716-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Temporal validity by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":154,\"w\":16,\"h\":45,\"i\":\"9\"},\"id\":\"3369f4b0-c716-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Thematic accuracy by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":32,\"y\":10,\"w\":16,\"h\":48,\"i\":\"10\"},\"id\":\"4264f280-c716-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Vertical resolution by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":16,\"y\":154,\"w\":16,\"h\":45,\"i\":\"11\"},\"id\":\"521de920-c716-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"11\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Usability by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":16,\"y\":106,\"w\":16,\"h\":48,\"i\":\"12\"},\"id\":\"5e8fcb10-c716-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"12\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Number of items by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":32,\"y\":106,\"w\":16,\"h\":48,\"i\":\"13\"},\"id\":\"0d307e90-c716-11e8-90bb-6540f76c8ed8\",\"panelIndex\":\"13\",\"type\":\"visualization\",\"version\":\"6.4.1\",\"title\":\"Vertical Spatial Coverage by P01\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":199,\"w\":48,\"h\":46,\"i\":\"14\"},\"id\":\"a0d657b0-be46-11e8-9127-0fc6b934c2f7\",\"panelIndex\":\"14\",\"type\":\"search\",\"version\":\"6.4.1\",\"title\":\"Measures\"}]",
-      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
-      "version": 1,
-      "timeRestore": false,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"checkpoint\",\"controlledBy\":\"1539597096882\",\"type\":\"phrase\",\"key\":\"challenges\",\"value\":\"Atlantic - CH05 - Coasts\",\"params\":{\"query\":\"Atlantic - CH05 - Coasts\",\"type\":\"phrase\"},\"disabled\":false,\"negate\":false,\"alias\":null},\"query\":{\"match\":{\"challenges\":{\"query\":\"Atlantic - CH05 - Coasts\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"globalState\"}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"controlledBy\":\"1537610571463\",\"disabled\":false,\"index\":\"checkpoint\",\"key\":\"resourceType.keyword\",\"negate\":false,\"params\":[\"DPS\",\"TDP\"],\"type\":\"phrases\",\"value\":\"DPS, TDP\"},\"query\":{\"bool\":{\"minimum_should_match\":1,\"should\":[{\"match_phrase\":{\"resourceType.keyword\":\"DPS\"}},{\"match_phrase\":{\"resourceType.keyword\":\"TDP\"}}]}}}]}"
       }
     },
     "_meta": {
