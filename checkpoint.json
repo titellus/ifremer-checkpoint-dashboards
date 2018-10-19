@@ -101,10 +101,19 @@
           "productScore": {
             "type": "keyword"
           },
+          "productScoreLabel": {
+            "type": "keyword"
+          },
           "productExpertOpinion": {
             "type": "text"
           },
           "measureValue": {
+            "type": "double"
+          },
+          "errorValue": {
+            "type": "double"
+          },
+          "indicatorValue": {
             "type": "double"
           },
           "identifier": {
